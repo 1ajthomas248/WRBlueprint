@@ -18,42 +18,81 @@
         <a href=""><button class="ml-5 py-2.5 px-6 bg-blue-400 border-none rounded-[40px] cursor-pointer">Book</button></a>
     </header>
     <main>
-        <section id="hero">
-        <div class="hero-overlay">
-            <div class="hero-left">
-            <img class="hero-logo" src="images/wrbp_logo.png" alt="WRBP Logo">
-            <h1>Your Route to Greatness Starts Here</h1>
-            <p class="hero-subtext">Elite wide receiver training tailored to your Blueprint — 1-on-1, group, and game-ready film sessions.</p>
-            <a href="#book" class="cta-button">Start Your Blueprint</a>
+       <section class="relative h-screen bg-cover bg-center text-white" style="background-image: url('images/hero_picture.jpg')">
+        <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-end items-center px-10">
+            <div class="max-w-xl text-right">
+            
+            <h1 class="text-5xl font-extrabold mb-5 leading-tight">Your Route to Greatness Starts Here</h1>
+            <p class="text-xl text-gray-300 mb-7">Elite wide receiver training tailored to your Blueprint — 1-on-1, group, and game-ready film sessions.</p>
+            <a href="#book" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition">Start Your Blueprint</a>
             </div>
         </div>
         </section>
 
 
-    <div class="flex-container">
-        <section id="services">
-            <h1>Your Personalized Blueprint</h1>
-            <h3>1 on 1 Session</h3>
-            <p>Tailored drills for your game and your goals.
-                The foundations for an elite receiver.
-            </p>
-            <h3>1 on 1 Session + Video</h3>
-            <p>Includes personalized film for further improvement
-                and uploaded to social media for increased exposure
-            </p>
-            <h3>Group Session</h3>
-            <p>Sharpen your skills against other like minded, elite receivers</p>
-        </section>
+
+    <section id="services" class="py-16 px-6 bg-gray-100 text-center">
+  <h2 class="text-4xl font-bold mb-12 text-gray-800">Your Personalized Blueprint</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="images/1v1.jpeg" alt="1 on 1" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">1-on-1 Session</h3>
+        <p class="text-gray-600 mb-4">
+          Tailored drills to develop your game. Focus on footwork, release, route running, and mindset.
+        </p>
+        <a href="#book" class="inline-block px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+          Book for $30
+        </a>
+      </div>
     </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="images/video.JPG" alt="1v1 + video" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">1-on-1 + Video Breakdown</h3>
+        <p class="text-gray-600 mb-4">
+          Includes filmed training + personal voiceover breakdown for deeper improvement & social exposure.
+        </p>
+        <a href="#book" class="inline-block px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+          Book for $35
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+      <img src="images/group.jpg" alt="Group session" class="w-full h-56 object-cover">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold mb-2">Group Session</h3>
+        <p class="text-gray-600 mb-4">
+          Compete with other hungry athletes. Develop timing, chemistry, and game-readiness.
+        </p>
+        <a href="#book" class="inline-block px-5 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
+          Book for $25
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
     
         <section id="about">
             <h1>Behind the Blueprint</h1>
-            <p>What's up I'm Coach Khari, a collegiate reciever
-                with WRBlueprint. The Blueprint is elite training to 
-                improve receivers all around skill set around gain 
-                exposure.
+            <p>What's up! I'm Coach Khari — a DMV native, Bullis High School alum, and current collegiate wide receiver at Stevenson University. 
+            Outside of football, I competed at a national level in track & field, racing in the 200m at New Balance Nationals. That speed, discipline, 
+            and competitive mindset is what I bring into every training session.
+            WRBlueprint is more than just drills — it’s elite receiver training built to sharpen your full skill set, boost your confidence, 
+            and get you real exposure. Whether you're working 1-on-1 with me or grinding in a group session, the goal is the same: build your Blueprint and 
+            become the most complete athlete you can be.
             </p>
-            <img src="images/IMG_4354.jpeg" alt="">
+            <img src="images/about1.jpg" alt="">
+            <img src="images/about2.jpg" alt="">
+            <img src="images/about3.jpg" alt="">
+            <img src="images/about4.jpeg" alt="">
         </section>
 
         <section id="book">

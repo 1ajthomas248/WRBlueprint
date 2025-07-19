@@ -4,66 +4,9 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: white;
+
 }
 
 
 
-#hero {
-    background-image: url("images/hero_picture.jpg"); /* Update path if needed */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-}
 
-.hero-overlay {
-    background: rgba(0, 0, 0, 0.6); /* darkens image slightly for text contrast */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-}
-
-.hero-left {
-    max-width: 600px;
-}
-
-.hero-logo {
-    width: 180px;
-    margin-bottom: 20px;
-}
-
-#hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero-subtext {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #e0e0e0;
-}
-
-.cta-button {
-    padding: 12px 28px;
-    background-color: #3958D8; /* your blue */
-    border: none;
-    border-radius: 30px;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #2c46b0;
-}
