@@ -23,7 +23,6 @@
   <!-- Navigation Links -->
   <nav id="nav-menu"
        class="absolute top-full left-0 w-full bg-white border-t border-gray-200 flex flex-col items-center gap-4 py-4 md:py-0 md:static md:flex-row md:w-auto md:border-none md:bg-transparent md:gap-8 md:ml-auto md:items-center hidden md:flex">
-    <a href="#hero" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
     <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
     <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
     <a href="#book" class="text-white bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition">
@@ -41,7 +40,14 @@
             <h1 class="text-5xl font-extrabold mb-5 leading-tight">Your Route to Greatness Starts Here</h1>
             <p class="text-xl text-gray-300 mb-7">Elite wide receiver training tailored to your Blueprint — 1-on-1, group, and game-ready film sessions.</p>
             <a href="#book" class="inline-block px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-full transition">Start Your Blueprint</a>
-            </div>
+          <div class="mt-4 flex justify-end space-x-4 text-white text-xl">
+            <a href="https://instagram.com/wr.blueprint" target="_blank" class="hover:text-blue-400">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://tiktok.com/@ykkhari" target="_blank" class="hover:text-blue-400">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
         </div>
         </section>
 
@@ -136,6 +142,43 @@
 
   </div>
 </section>
+
+<section id="testimonials" class="bg-white py-20 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-12">What Athletes Are Saying</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+      <!-- Testimonial 1 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <p class="text-gray-700 italic mb-4">
+          "Khari is a great trainer and athlete; he helped me with a lot of things I was struggling with. 100% recommend him."
+        </p>
+        <p class="font-semibold text-gray-800">— Athlete</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <p class="text-gray-700 italic mb-4">
+          "Khari is an outstanding football trainer; he helps players gain a deep understanding of every drill he teaches,
+          and he pushes them to reach their full potential."
+        </p>
+        <p class="font-semibold text-gray-800">— Player</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition">
+        <p class="text-gray-700 italic mb-4">
+          "Khari is dedicated, knowledgeable, and truly cares about helping players improve both on and off the field.
+          His passion for the game motivates everyone around him to work harder."
+        </p>
+        <p class="font-semibold text-gray-800">— Parent</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
 <!-- BOOKING FORM -->
 <section id="book" class="bg-gray-100 py-20 px-6">
@@ -238,6 +281,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -7,50 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const heroImages = [
-    'images/hero_picture.jpg',
-    'images/hero_picture2.jpg',
-    'images/hero_picture3.jpg' // Add more if you have them
-  ];
-
-  let heroIndex = 0;
-  let heroShowingA = true;
-
-  const heroA = document.getElementById('heroImageA');
-  const heroB = document.getElementById('heroImageB');
-
-  setInterval(() => {
-    const nextHero = (heroIndex + 1) % heroImages.length;
-
-    if (heroShowingA) {
-      heroB.src = heroImages[nextHero];
-      heroB.onload = () => {
-        heroB.classList.add("opacity-100");
-        heroA.classList.remove("opacity-100");
-        heroA.classList.add("opacity-0");
-      };
-    } else {
-      heroA.src = heroImages[nextHero];
-      heroA.onload = () => {
-        heroA.classList.add("opacity-100");
-        heroB.classList.remove("opacity-100");
-        heroB.classList.add("opacity-0");
-      };
-    }
-
-    heroShowingA = !heroShowingA;
-    heroIndex = nextHero;
-  }, 5000); // Crossfade every 5 seconds
-});
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = [
     'images/about1.jpg',
     'images/about2.jpg',
     'images/about3.jpg',
-    'images/about4.jpeg'
+    'images/about4.jpeg',
+    'images/about5.jpg'
   ];
 
   let currentIndex = 0;
