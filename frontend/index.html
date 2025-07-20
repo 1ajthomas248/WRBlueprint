@@ -6,21 +6,37 @@
     <title>WRBlueprint</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
-    <header class="flex justify-end items-center py-5 px-10">
-        <img class="max-w-[250px] h-auto mr-auto cursor-pointer" src="images/wrbp_logo.png" alt="logo">
-        <nav>
-            <a class="py-0 px-5 transition-all duration-300 ease-in-out hover:text-blue-500" href="">Services</a>
-            <a class="py-0 px-5 transition-all duration-300 ease-in-out hover:text-blue-500" href="">About</a>
-            <a class="py-0 px-5 transition-all duration-300 ease-in-out hover:text-blue-500" href="">Reviews</a>
-        </nav>
-        <a href=""><button class="ml-5 py-2.5 px-6 bg-blue-400 border-none rounded-[40px] cursor-pointer">Book</button></a>
-    </header>
+    <header class="bg-white shadow-md px-6 md:px-10 py-4 flex items-center justify-between relative z-50">
+  <!-- Logo -->
+  <img src="images/wrbp_logo.png" alt="WRBlueprint logo" class="h-10 w-auto">
+
+
+  <!-- Hamburger Button -->
+  <button id="menu-toggle" class="md:hidden text-3xl text-blue-600 focus:outline-none">
+    ☰
+  </button>
+
+  <!-- Navigation Links -->
+  <nav id="nav-menu"
+       class="absolute top-full left-0 w-full bg-white border-t border-gray-200 flex flex-col items-center gap-4 py-4 md:py-0 md:static md:flex-row md:w-auto md:border-none md:bg-transparent md:gap-8 md:ml-auto md:items-center hidden md:flex">
+    <a href="#hero" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+    <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium">About</a>
+    <a href="#book" class="text-white bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition">
+      Book Now
+    </a>
+  </nav>
+</header>
+
     <main>
        <section class="relative h-screen bg-cover bg-center text-white" style="background-image: url('images/hero_picture.jpg')">
         <div class="absolute inset-0 bg-black bg-opacity-60 flex justify-end items-center px-10">
-            <div class="max-w-xl text-right">
+            <div class="w-full md:max-w-xl text-right text-sm md:text-base px-4 md:px-0">
+
             
             <h1 class="text-5xl font-extrabold mb-5 leading-tight">Your Route to Greatness Starts Here</h1>
             <p class="text-xl text-gray-300 mb-7">Elite wide receiver training tailored to your Blueprint — 1-on-1, group, and game-ready film sessions.</p>
@@ -28,6 +44,19 @@
             </div>
         </div>
         </section>
+
+   <section class="relative bg-white py-20 px-6 text-center overflow-hidden">
+
+  <div class="max-w-4xl mx-auto relative z-10">
+    <h2 class="text-4xl font-bold text-gray-800 mb-6">The Blueprint in Action</h2>
+    <p class="text-lg text-gray-700 leading-relaxed">
+      Every WRBlueprint session is built to develop complete, game-ready receivers. You’ll work through a combination of footwork drills, release techniques, top-of-route separation, and situational awareness. Expect detailed coaching on mechanics like hand placement, eye discipline, and hip control — the little things that separate good from elite.
+      <br><br>
+      Training is broken down by position, skill level, and goals. Whether you're fine-tuning route timing, mastering your stance, or building speed and agility, each session is customized to help you execute with confidence. You’ll also get mental reps through chalk talks, on-field adjustments, and video analysis — because WRs aren’t just athletes, we’re technicians.
+    </p>
+  </div>
+</section>
+
 
 
 
@@ -80,35 +109,135 @@
 </section>
 
     
-        <section id="about">
-            <h1>Behind the Blueprint</h1>
+<section id="about" class="py-16 px-6 bg-white">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+    
+    <!-- Image Slideshow -->
+ <div class="relative w-full h-80 md:w-1/2 overflow-hidden rounded-xl shadow-lg">
+  <img id="imageA" src="images/about1.jpg"
+       class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 z-0">
+  <img id="imageB" src="images/about2.jpg"
+       class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 z-0">
+</div>
+
+
+    <!-- Text -->
+    <div class="w-full md:w-1/2 text-gray-800">
+      <h2 class="text-4xl font-bold mb-4">Behind the Blueprint</h2>
+      <p class="text-lg leading-relaxed">
             <p>What's up! I'm Coach Khari — a DMV native, Bullis High School alum, and current collegiate wide receiver at Stevenson University. 
             Outside of football, I competed at a national level in track & field, racing in the 200m at New Balance Nationals. That speed, discipline, 
             and competitive mindset is what I bring into every training session.
-            WRBlueprint is more than just drills — it’s elite receiver training built to sharpen your full skill set, boost your confidence, 
+            WRBlueprint is more than just drills: it’s elite receiver training built to sharpen your full skill set, boost your confidence, 
             and get you real exposure. Whether you're working 1-on-1 with me or grinding in a group session, the goal is the same: build your Blueprint and 
             become the most complete athlete you can be.
             </p>
-            <img src="images/about1.jpg" alt="">
-            <img src="images/about2.jpg" alt="">
-            <img src="images/about3.jpg" alt="">
-            <img src="images/about4.jpeg" alt="">
-        </section>
+            </div>
 
-        <section id="book">
-            <h1>Let's Get to Work</h1>
-            <p>The first step starts with you. </p>
-            <form action="">
-                <label for="fname">First Name:</label>
-                <input type="text" id="fname" name="fname">
-                <label for="lname">Last Name:</label>
-                <input type="text" id="lname" name="lname"><br>
-                <label for="number">Phone Number:</label>
-                <input type="text" id="number" name="number">
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email"><br>
-            </form>
-        </section>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section id="book" class="bg-gray-100 py-20 px-6">
+  <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-8">
+      Let's Get to Work
+    </h2>
+
+    <!-- FORM -->
+    <form id="booking-form" class="grid gap-6 lg:grid-cols-2"
+          autocomplete="off">
+      <!-- First Name -->
+      <div class="flex flex-col">
+        <label for="fname" class="font-semibold text-gray-700 mb-1">First Name</label>
+        <input type="text" id="fname" name="fname"
+               class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"
+               required>
+      </div>
+
+      <!-- Last Name -->
+      <div class="flex flex-col">
+        <label for="lname" class="font-semibold text-gray-700 mb-1">Last Name</label>
+        <input type="text" id="lname" name="lname"
+               class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"
+               required>
+      </div>
+
+      <!-- Phone -->
+      <div class="flex flex-col">
+        <label for="phone" class="font-semibold text-gray-700 mb-1">Phone Number</label>
+        <input type="tel" id="phone" name="phone"
+               class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"
+               placeholder="555-123-4567" required>
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col">
+        <label for="email" class="font-semibold text-gray-700 mb-1">Email</label>
+        <input type="email" id="email" name="email"
+               class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"
+               required>
+      </div>
+
+      <!-- Session Type -->
+      <div class="flex flex-col lg:col-span-2">
+        <label for="session" class="font-semibold text-gray-700 mb-1">Session Type</label>
+        <select id="session" name="session"
+                class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500">
+          <option value="1-on-1">1-on-1 Session ($30)</option>
+          <option value="1-on-1+Video">1-on-1 + Video Breakdown ($35)</option>
+          <option value="Group">Group Session ($25)</option>
+        </select>
+      </div>
+
+      <!-- Desired Date/Time -->
+      <div class="flex flex-col lg:col-span-2">
+        <label for="datetime" class="font-semibold text-gray-700 mb-1">Preferred Date & Time</label>
+        <input type="datetime-local" id="datetime" name="datetime"
+               class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"
+               required>
+      </div>
+
+      <!-- Notes -->
+      <div class="flex flex-col lg:col-span-2">
+        <label for="notes" class="font-semibold text-gray-700 mb-1">Goals / Notes</label>
+        <textarea id="notes" name="notes" rows="4"
+                  class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500"
+                  placeholder="What would you like to focus on?"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="lg:col-span-2 text-center">
+        <button type="submit"
+                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition">
+          Book My Session
+        </button>
+      </div>
+    </form>
+
+    <!-- Success message (hidden by default) -->
+    <div id="success-msg"
+         class="hidden mt-6 text-green-600 font-semibold text-center">
+      Thank you! Coach Khari will contact you soon.
+    </div>
+  </div>
+</section>
+
     </main>
+    <footer class="bg-gray-900 text-white py-8 text-center">
+  <div class="mb-4">
+    <p class="text-sm">© 2025 WRBlueprint. All rights reserved.</p>
+  </div>
+  <div class="flex justify-center space-x-6 text-xl">
+    <a href="https://instagram.com/wr.blueprint" target="_blank" class="hover:text-blue-400">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://tiktok.com/@ykkhari" target="_blank" class="hover:text-blue-400">
+      <i class="fab fa-tiktok"></i>
+    </a>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
