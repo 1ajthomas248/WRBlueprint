@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('menu-toggle');
   const nav = document.getElementById('nav-menu');
 
@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = [
-    'images/about1.jpg',
+    'images/about1.JPG',
     'images/about2.jpg',
     'images/about3.jpg',
     'images/about4.jpeg',
-    'images/about5.jpg'
+    'images/about5.JPG'
   ];
 
   let currentIndex = 0;
@@ -60,8 +60,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('booking-form');
   const successMsg = document.getElementById('success-msg');
 
+  // Show location field only if 'House' session is selected
+  const sessionSelect = document.getElementById('session');
+  const locationField = document.getElementById('location-field');
+  if (sessionSelect && locationField) {
+    sessionSelect.addEventListener('change', function() {
+      if (sessionSelect.value === 'House') {
+        locationField.style.display = 'flex';
+      } else {
+        locationField.style.display = 'none';
+      }
+    });
+    // On page load, set correct visibility
+    if (sessionSelect.value === 'House') {
+      locationField.style.display = 'flex';
+    } else {
+      locationField.style.display = 'none';
+    }
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
+    // Set default location if House is selected and location is empty
+    const sessionSelect = document.getElementById('session');
+    const locationInput = document.getElementById('location');
+    if (sessionSelect && locationInput && sessionSelect.value === 'House' && !locationInput.value.trim()) {
+      locationInput.value = 'Gaithersburg HS';
+    }
 
     emailjs.sendForm('service_8iqfm6e', 'template_wpd0t9e', form)
       .then(() => {
