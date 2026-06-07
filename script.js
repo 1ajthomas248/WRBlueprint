@@ -10,11 +10,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = [
-    'images/about1.JPG',
+    'images/about1.jpg',
     'images/about2.jpg',
     'images/about3.jpg',
     'images/about4.jpeg',
-    'images/about5.JPG'
+    'images/about6.JPG',
+    'images/about7.JPEG'
   ];
 
   let currentIndex = 0;
