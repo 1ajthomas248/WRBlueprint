@@ -8,3 +8,26 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --brand-blue: rgb(0, 0, 191);
+  --brand-blue-hover: rgb(0, 0, 150);
+}
+
+.brand-text {
+  color: var(--brand-blue);
+}
+
+.brand-link:hover,
+.brand-icon-link:hover {
+  color: var(--brand-blue);
+}
+
+.brand-button {
+  background-color: var(--brand-blue);
+  color: #fff;
+}
+
+.brand-button:hover {
+  background-color: var(--brand-blue-hover);
+}
