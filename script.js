@@ -8,6 +8,23 @@
 });
 
 
+// Hero: play the two touchdown clips back to back, looping forever (muted)
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('hero-video');
+  if (!video) return;
+
+  const clips = ['images/hero_video1.mp4', 'images/hero_video2.mp4'];
+  let current = 0;
+
+  video.muted = true;
+  video.addEventListener('ended', () => {
+    current = (current + 1) % clips.length;
+    video.src = clips[current];
+    video.play().catch(() => {});
+  });
+  video.play().catch(() => {});
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const images = [
     'images/about1.jpg',
@@ -15,7 +32,15 @@ document.addEventListener('DOMContentLoaded', () => {
     'images/about3.jpg',
     'images/about4.jpeg',
     'images/about6.JPG',
-    'images/about7.JPEG'
+    'images/about7.JPEG',
+    'images/about8.jpg',
+    'images/about9.jpg',
+    'images/about10.jpg',
+    'images/about11.jpg',
+    'images/about12.jpg',
+    'images/about13.jpg',
+    'images/about14.jpg',
+    'images/about15.jpg'
   ];
 
   let currentIndex = 0;
