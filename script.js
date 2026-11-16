@@ -64,6 +64,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const imgA = document.getElementById("imageA");
   const imgB = document.getElementById("imageB");
 
+  // Vertical position of his face in each photo (0 = top, 1 = bottom).
+  // The slideshow box is wide but most photos are tall, so we shift each
+  // photo so the face stays centered in the visible crop.
+  const faceY = {
+    'about8.jpg': 0.50,
+    'about9.jpg': 0.34,
+    'about10.jpg': 0.46,
+    'about11.jpg': 0.33,
+    'about12.jpg': 0.16,
+    'about13.jpg': 0.32,
+    'about14.jpg': 0.38,
+    'about15.jpg': 0.38
+  };
+
+  const focusFace = (img) => {
+    const name = img.getAttribute('src').split('/').pop();
+    const c = faceY[name];
+    if (c === undefined || !img.naturalWidth) return;
+    const cw = img.clientWidth, ch = img.clientHeight;
+    const h = img.naturalHeight * Math.max(cw / img.naturalWidth, ch / img.naturalHeight);
+    if (h <= ch) return;
+    const pos = Math.min(1, Math.max(0, (c * h - ch / 2) / (h - ch)));
+    img.style.objectPosition = `50% ${(pos * 100).toFixed(1)}%`;
+  };
+
+  [imgA, imgB].forEach(img => {
+    img.addEventListener('load', () => focusFace(img));
+    if (img.complete) focusFace(img);
+  });
+  window.addEventListener('resize', () => [imgA, imgB].forEach(focusFace));
+
   setInterval(() => {
     const nextIndex = (currentIndex + 1) % images.length;
 
