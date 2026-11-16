@@ -8,31 +8,46 @@
 });
 
 
-// Hero: play the two touchdown clips back to back, looping forever (muted)
+// Hero: the picture fades into the first touchdown clip once it can play,
+// then the two clips crossfade back and forth forever (muted)
 document.addEventListener('DOMContentLoaded', () => {
-  const video = document.getElementById('hero-video');
-  if (!video) return;
+  const videos = Array.from(document.querySelectorAll('.hero-video'));
+  if (videos.length < 2) return;
 
-  const clips = ['images/hero_video1.mp4', 'images/hero_video2.mp4'];
   let current = 0;
+  let started = false;
 
-  video.muted = true;
-  video.addEventListener('ended', () => {
-    current = (current + 1) % clips.length;
-    video.src = clips[current];
-    video.play().catch(() => {});
+  const show = (i) => {
+    const v = videos[i];
+    v.currentTime = 0;
+    v.play().then(() => {
+      v.classList.remove('opacity-0');
+      v.classList.add('opacity-100');
+      videos[1 - i].classList.remove('opacity-100');
+      videos[1 - i].classList.add('opacity-0');
+    }).catch(() => {});
+  };
+
+  videos.forEach((v, i) => {
+    v.muted = true;
+    v.addEventListener('ended', () => {
+      current = 1 - i;
+      show(current);
+    });
   });
-  video.play().catch(() => {});
+
+  // Start as soon as the first clip has enough data to play without stalling
+  const start = () => {
+    if (started) return;
+    started = true;
+    show(0);
+  };
+  if (videos[0].readyState >= 3) start();
+  else videos[0].addEventListener('canplay', start, { once: true });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const images = [
-    'images/about1.jpg',
-    'images/about2.jpg',
-    'images/about3.jpg',
-    'images/about4.jpeg',
-    'images/about6.JPG',
-    'images/about7.JPEG',
     'images/about8.jpg',
     'images/about9.jpg',
     'images/about10.jpg',
