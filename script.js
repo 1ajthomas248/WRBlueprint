@@ -19,31 +19,45 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const show = (i) => {
     const v = videos[i];
-    v.currentTime = 0;
-    v.play().then(() => {
+    try { v.currentTime = 0; } catch (e) {}
+    const p = v.play();
+    const reveal = () => {
       v.classList.remove('opacity-0');
       v.classList.add('opacity-100');
       videos[1 - i].classList.remove('opacity-100');
       videos[1 - i].classList.add('opacity-0');
-    }).catch(() => {});
+    };
+    if (p && p.then) {
+      p.then(reveal).catch(() => {
+        // Autoplay blocked (e.g. iOS Low Power Mode): retry on first interaction
+        const retry = () => show(i);
+        ['touchstart', 'click', 'scroll'].forEach((ev) =>
+          window.addEventListener(ev, retry, { once: true, passive: true }));
+      });
+    } else {
+      reveal();
+    }
   };
 
   videos.forEach((v, i) => {
+    // Set as properties too: iOS needs muted + playsinline before play()
     v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    v.setAttribute('webkit-playsinline', '');
     v.addEventListener('ended', () => {
       current = 1 - i;
       show(current);
     });
   });
 
-  // Start as soon as the first clip has enough data to play without stalling
-  const start = () => {
-    if (started) return;
+  // Mobile browsers don't preload, so don't wait for canplay: call play() right away
+  // (it buffers and starts as soon as it can).
+  if (!started) {
     started = true;
     show(0);
-  };
-  if (videos[0].readyState >= 3) start();
-  else videos[0].addEventListener('canplay', start, { once: true });
+  }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
